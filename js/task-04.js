@@ -2,32 +2,35 @@ const increment = document.querySelector('button[data-action="increment"]');
 const decrement = document.querySelector('button[data-action="decrement"]');
 const counterValue = document.querySelector("#value");
 
-// var1
+//  var1 - все можно сделать одним обработчиком
 // increment.addEventListener("click", handleClick);
 // decrement.addEventListener("click", handleClick);
 
 // function handleClick(event) {
-//   if (event.currentTarget.dataset.action === "increment") {
-//     counterValue.textContent = Number(counterValue.textContent) + 1;
+//   const target = event.currentTarget.dataset.action;
+//   const value = convertToNumber();
+//   if (target === "increment") {
+//     counterValue.textContent = value + 1;
 //     return;
 //   }
-//   if (event.currentTarget.dataset.action === "decrement") {
-//     if (Number(counterValue.textContent) === 0) {
+//   if (target === "decrement") {
+//     if (value === 0) {
 //       return;
 //     }
-//     counterValue.textContent = Number(counterValue.textContent) - 1;
+//     counterValue.textContent = value - 1;
 //     return;
 //   }
 // }
 
-// var 2
-increment.addEventListener("click", handleIncrement);
-decrement.addEventListener("click", handleDecrement);
-
+// Вспомогательная функция для перевода строки в число
 function convertToNumber() {
   const value = Number(counterValue.textContent);
   return value;
 }
+
+// var 2 - ну или двумя ))))
+increment.addEventListener("click", handleIncrement);
+decrement.addEventListener("click", handleDecrement);
 
 function handleIncrement() {
   const value = convertToNumber();

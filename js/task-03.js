@@ -14,11 +14,9 @@ const images = [
 ];
 
 const list = document.querySelector("ul.gallery");
-console.log(list);
 
 const listItem = images
   .map(({ url, alt }) => `<li><img class="image" src=${url} alt='${alt}'></li>`)
   .join("");
-console.log(listItem);
 
 list.insertAdjacentHTML("beforeend", listItem);

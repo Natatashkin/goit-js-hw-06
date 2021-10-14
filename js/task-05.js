@@ -1,12 +1,15 @@
 const input = document.querySelector("#name-input");
 console.log(input);
-const span = document.querySelector("#name-output");
-console.log(span);
+const spanOutput = document.querySelector("#name-output");
+console.log(spanOutput);
 
-document.addEventListener("keydown", (event) => {
-  console.log("Keydown: ", event);
-});
+input.addEventListener("input", simbolInputHandler);
 
-document.addEventListener("keyup", (event) => {
-  console.log("Keyup: ", event);
-});
+function simbolInputHandler(event) {
+  spanOutput.textContent = event.currentTarget.value;
+
+  if (event.currentTarget.value === "") {
+    spanOutput.textContent = "Anonymous";
+    console.log("Это пустая строка");
+  }
+}
