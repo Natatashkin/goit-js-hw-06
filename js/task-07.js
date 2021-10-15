@@ -1,9 +1,9 @@
 const fontSizeSwithcer = document.querySelector("#font-size-control");
 const outputSize = document.querySelector("#text");
 
-fontSizeSwithcer.addEventListener("input", hamdleFontSize);
+fontSizeSwithcer.addEventListener("input", handleFontSize);
 
-function hamdleFontSize(event) {
+function handleFontSize(event) {
   const switcher = event.currentTarget;
 
   outputSize.style.fontSize = `${switcher.value}px`;
