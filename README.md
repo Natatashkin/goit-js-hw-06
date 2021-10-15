@@ -242,7 +242,7 @@ const images = [
 
 ```html
 <div class="widget">
-  <p>Background color: <span class="color">-</span></p>
+  <p>Background color: <span class="'color'">-</span></p>
   <button type="button" class="change-color">Change color</button>
 </div>
 ```
