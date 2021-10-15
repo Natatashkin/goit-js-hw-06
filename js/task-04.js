@@ -39,8 +39,9 @@ function handleIncrement() {
 
 function handleDecrement() {
   const value = convertToNumber();
-  if (value === 0) {
-    return;
-  }
+  // в канале ментора написано, что эта проверка не нужна
+  // if (value === 0) {
+  //   return;
+  // }
   counterValue.textContent = value - 1;
 }
