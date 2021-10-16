@@ -1,25 +1,17 @@
 const input = document.querySelector("#validation-input");
 console.log(input);
 
-input.addEventListener("blur", onInputValid);
-input.addEventListener("focus", onFocus);
+input.addEventListener("input", onInputValid);
 
-// Обработчик добавлен чтобы не перегружать страницу
-function onFocus(event) {
-  const classList = event.currentTarget.classList;
-  if (classList.length > 0) {
-    classList.remove(classList.value);
-  }
-}
-
-// Решение задачи
-function onInputValid(event) {
-  const targetInput = event.currentTarget;
-  const targetInputLength = targetInput.value.length;
+function onInputValid(e) {
+  const targetInput = e.currentTarget;
+  const inputTargetLength = targetInput.value.length;
   const validation = Number(targetInput.dataset.length);
 
-  if (targetInputLength !== validation) {
-    return targetInput.classList.add("invalid");
+  if (inputTargetLength === validation) {
+    targetInput.classList.replace("invalid", "valid");
+  } else {
+    targetInput.classList.add("invalid");
+    targetInput.classList.remove("valid");
   }
-  return targetInput.classList.add("valid");
 }
