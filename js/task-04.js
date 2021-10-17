@@ -1,20 +1,20 @@
 const increment = document.querySelector('button[data-action="increment"]');
 const decrement = document.querySelector('button[data-action="decrement"]');
-const counterValue = document.querySelector('#value');
+const number = document.querySelector('#value');
 
 // var 4 c этим решением я не согласна, так мы не получаем значение спана, прописанное в html, и если руками в дкевтулзах заменить 0 на 25, счётчик продолжает считать от 0.
 
 increment.addEventListener('click', handleIncrement);
 decrement.addEventListener('click', handleDecrement);
 
-let number = 0;
+let counterValue = 0;
 
 function handleIncrement() {
-  counterValue.textContent = ++number;
+  number.textContent = ++counterValue;
 }
 
 function handleDecrement() {
-  counterValue.textContent = --number;
+  number.textContent = --counterValue;
 }
 
 // var 3 с переменной как просил ментор, но второй делает тоже самое с функцией вместо переменной. я проверяла
